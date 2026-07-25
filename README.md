@@ -4,7 +4,7 @@ A full-stack web application to track job applications, manage statuses, and sta
 
 **Live demo:** [[your-app.onrender.com](https://job-tracker-app-osqk.onrender.com)](#) ← add after deploying
 
-![Job Tracker Screenshot](./screenshot.png) ← add after taking a screenshot
+![Job Tracker Screenshot](./screenshot1.png) ← add after taking a screenshot
 
 ---
 
