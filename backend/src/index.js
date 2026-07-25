@@ -2,6 +2,25 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
+const pool = require('./db');
+
+// Auto-create tables on startup
+pool.query(`
+  CREATE TABLE IF NOT EXISTS applications (
+    id SERIAL PRIMARY KEY,
+    company VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    status VARCHAR(50) NOT NULL DEFAULT 'Applied',
+    location VARCHAR(255),
+    salary_range VARCHAR(100),
+    applied_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    notes TEXT,
+    url VARCHAR(500),
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+  )
+`).then(() => console.log('Database ready')).catch(console.error);
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
