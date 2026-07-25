@@ -2,7 +2,7 @@
 
 A full-stack web application to track job applications, manage statuses, and stay organised during a job search.
 
-**Live demo:** [your-app.onrender.com](#) ← add after deploying
+**Live demo:** [[your-app.onrender.com](https://job-tracker-app-osqk.onrender.com)](#) ← add after deploying
 
 ![Job Tracker Screenshot](./screenshot.png) ← add after taking a screenshot
 
