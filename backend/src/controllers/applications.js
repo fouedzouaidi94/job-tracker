@@ -30,10 +30,11 @@ const create = async (req, res) => {
     const { rows } = await pool.query(
       `INSERT INTO applications (company, role, status, location, salary_range, applied_date, notes, url)
        VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
-      [company, role, status || 'Applied', location, salary_range, applied_date || new Date(), notes, url]
+      [company, role, status || 'Applied', location || '', salary_range || '', applied_date || new Date().toISOString().split('T')[0], notes || '', url || '']
     );
     res.status(201).json(rows[0]);
   } catch (err) {
+    console.error('Create error:', err.message);
     res.status(500).json({ error: err.message });
   }
 };
