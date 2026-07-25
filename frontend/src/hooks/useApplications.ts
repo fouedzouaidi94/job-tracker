@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Application, ApplicationInput } from '../types';
 
-const API = '/api/applications';
+const API = 'https://job-tracker-api-9xg2.onrender.com/api/applications';
 
 export function useApplications() {
   const [applications, setApplications] = useState<Application[]>([]);
